@@ -8,10 +8,18 @@ object HelloWorld {
 
   def greeting(): Unit = println("Hello!")
 
+  def factorial(x: Int): Int = {
+    if (x == 0 || x == 1)
+      x
+    else
+      x * factorial(x - 1)
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
     greeting()
     println(multipliedByTwo(5))
     println(multipliedByTen(y=9))
+    println(factorial(5))
   }
 }

@@ -21,5 +21,24 @@ object HelloWorld {
     println(multipliedByTwo(5))
     println(multipliedByTen(y=9))
     println(factorial(5))
+
+    // immutable inclusive range
+    for (i <- 1 to 10) println(i)
+    println("-----")
+
+    // immutable exclusive range
+    for (i <- 1 until 10) println(i)
+    println("-----")
+
+    // use guard
+    for (i <- 1 until 10 if i % 2 == 0) println(i)
+    println("-----")
+
+    val age = 20
+    age match {
+      case 10 => println("ten")
+      case 20 => println("twenty")
+      case _  => println("Did not find a match")
+    }
   }
 }

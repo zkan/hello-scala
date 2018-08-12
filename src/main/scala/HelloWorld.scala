@@ -6,8 +6,11 @@ object HelloWorld {
       x * y
   }
 
+  def greeting(): Unit = println("Hello!")
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
+    greeting()
     println(multipliedByTwo(5))
     println(multipliedByTen(y=9))
   }

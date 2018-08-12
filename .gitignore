@@ -1,3 +1,5 @@
 *.class
 *.log
 *.swp
+target/
+project/target/

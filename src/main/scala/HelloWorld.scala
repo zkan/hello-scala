@@ -15,6 +15,16 @@ object HelloWorld {
       x * factorial(x - 1)
   }
 
+  def abs(n: Int): Int = {
+    if (n < 0) -n
+    else n
+  }
+
+  private def formatAbs(x: Int) = {
+    val msg = "This absolute value of %d is %d"
+    msg.format(x, abs(x))
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
     greeting()
@@ -40,5 +50,7 @@ object HelloWorld {
       case 20 => println("twenty")
       case _  => println("Did not find a match")
     }
+
+    println(formatAbs(-42))
   }
 }

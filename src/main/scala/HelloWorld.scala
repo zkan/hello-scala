@@ -42,6 +42,15 @@ object HelloWorld {
     go(n, 0, 1)
   }
 
+  def findFirst(ss: Array[String], key: String): Int = {
+    def loop(n: Int): Int =
+      if (n >= ss.length) -1
+      else if (ss(n) == key) n
+      else loop(n + 1)
+
+    loop(0)
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
     greeting()
@@ -71,5 +80,11 @@ object HelloWorld {
     println(formatAbs(-42))
     println(myFactorial(5))
     println(fib(9))
+
+    val ss: Array[String] = Array("Hello", "World", "Scala")
+    val key: String = "Scala"
+    val result: Int = findFirst(ss, key)
+    println(result)
+
   }
 }

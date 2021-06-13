@@ -51,6 +51,16 @@ object HelloWorld {
     loop(0)
   }
 
+  def findFirstAbstract[A](as: Array[A], p: A => Boolean): Int = {
+    def loop(n: Int): Int = {
+      if (n >= as.length) -1
+      else if (p(as(n))) n
+      else loop(n + 1)
+    }
+
+    loop(0)
+  }
+
   def main(args: Array[String]): Unit = {
     println("Hello World")
     greeting()
@@ -83,7 +93,12 @@ object HelloWorld {
 
     val ss: Array[String] = Array("Hello", "World", "Scala")
     val key: String = "Scala"
-    val result: Int = findFirst(ss, key)
+    var result: Int = findFirst(ss, key)
+    println(result)
+
+    val as: Array[Int] = Array(1, 9, 3, 4, 0)
+    val keyInt: Int = 9
+    result = findFirstAbstract[Int](as, (x: Int) => x == keyInt)
     println(result)
 
   }
